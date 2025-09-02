@@ -6,3 +6,18 @@ img {
   max-height: 500px;
 
 }
+
+.btn:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+.logo {
+  max-height: 70px; /* Ajusta este valor según lo que necesites */
+  height: auto;
+  width: auto;
+  margin-top: 0;
+  display: flex;
+  padding: 0;
+
+}
