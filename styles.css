@@ -21,3 +21,10 @@ img {
   padding: 0;
 
 }
+
+
+@media (max-width: 576px) {
+  .carousel-item img {
+    height: 200px;
+  }
+}

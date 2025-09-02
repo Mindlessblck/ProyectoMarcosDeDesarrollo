@@ -14,6 +14,7 @@
     />
 
   <link rel="stylesheet" href="styles.css">
+  
 </head>
 
 <body class="bg-dark">
@@ -67,7 +68,7 @@
                 aria-label="Buscar"
               />
 
-              <button class="btn btn-outline-info" type="submit">
+              <button class="btn btn-outline-warning" type="submit">
                 Buscar
               </button>
             </form>
@@ -77,6 +78,7 @@
 
               <!-- Botón que abre el modal --> 
                
+              <!--
               <a href="#">
                 <i class="fa-solid fa-cart-shopping text-light px-2"></i>
               </a>
@@ -85,11 +87,9 @@
               </a>
               <a href="#" class="btn" data-bs-toggle="modal" data-bs-target="#contactModal">
                 <i class="fa-solid fa-user text-light"></i>
-              </a>
+              </a>  --> 
                   
-            
-
-              <!--
+              
               <button class="btn">
                 <a href="#">
                   <i class="fa-solid fa-cart-shopping text-light"></i>
@@ -100,26 +100,17 @@
                   <i class="fa-solid fa-heart text-light"></i>
                 </a>
               </button>
-              <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#contactModal">
+              <button class="btn " data-bs-toggle="modal" data-bs-target="#contactModal">
                 <a href="#">
                   <i class="fa-solid fa-user text-light px-2"></i>
                 </a>
-              </button>  -->
+              </button>  
 
 
                
 
               
                
-              
-
-
-              <!--
-              <a href="#" class="btn" data-bs-toggle="modal" data-bs-target="#contactModal"><i class="fa-solid fa-user text-light px-2"></i></a>
-              <a href="#"><i class="fa-solid fa-heart text-light px-2"></i></a>
-              <a href="#"><i class="fa-solid fa-cart-shopping text-light px-2"></i></a>  -->
-
-
           </div>
         </div>
       </nav>
@@ -136,33 +127,35 @@
 
             <!-- Encabezado -->
             <div class="modal-header">
-              <h5 class="modal-title text-light" id="contactModalLabel">Formulario de Contacto</h5>
+              <h5 class="modal-title text-warning" id="contactModalLabel">INICIAR SESION</h5>
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
             </div>
+
 
             <!-- Cuerpo con formulario -->
               <div class="modal-body">
                 <form>
-                  <div class="mb-3">
-                    <label for="nombre" class="form-label text-light">Nombre</label>
-                    <input type="text" class="form-control" id="nombre" placeholder="Tu nombre">
-                  </div>
+                  
                   <div class="mb-3">
                     <label for="correo" class="form-label text-light">Correo Electrónico</label>
-                    <input type="email" class="form-control" id="correo" placeholder="email@ejemplo.com">
-                    <div class="form-text text-light">Nunca compartiremos tu email con nadie.</div>
+                    <input type="email" class="form-control" id="correo" placeholder="email@ejemplo.com" required>
+                    
                   </div>
                   <div class="mb-3">
-                    <label for="mensaje" class="form-label text-light">Mensaje</label>
-                    <textarea class="form-control" id="mensaje" rows="3"></textarea>
+                    <label for="password" class="form-label text-light">Contraseña</label>
+                    <input type="password" class="form-control" id="password" placeholder="Tu contraseña">
+                  </div>
+
+                  <div>
+                    <a href="#" class="text-decoration-none">¿Olvidaste tu contraseña?</a> <br>
                   </div>
                 </form>
               </div>
 
-
               <div class="modal-footer">
+                <a href="#" class="text-decoration-none me-auto ">Crear una cuenta</a>
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                <button type="button" class="btn btn-primary">Enviar Mensaje</button>
+                <button type="button" class="btn btn-warning">Acceder</button>
               </div>
 
           </div>
@@ -209,57 +202,63 @@
 
           <div class="carousel-item active" data-bs-interval="3000">
             <img
-              src="img/imagen-1.jpg"
+              src="img/imagen1.jpg"
               class="d-block w-100"
               alt="slide 1"/>
             
 
-            <!--
+            
             <div class="carousel-caption d-none d-md-block text-light">
-              <h5>First slide label</h5>
+              <h5>Accesorios Exclusivos de Rock</h5>
               <p>
-                Some representative placeholder content for the first slide.
+                Descubre nuestra colección de Accesorios inspirados
+                en las bandas más legendarias. ¡Perfectas para fans auténticos!
               </p>
-            </div> -->
+            </div>
 
           </div>
 
 
           <!--SEgundo slide ---->
-          <div class="carousel-item"  data-bs-interval="2000">
+          <div class="carousel-item position-relative"  data-bs-interval="2000">
 
             <img
-              src="img/imagen-2.jpg"
+              src="img/imagen2.jpg"
               class="d-block w-100"
               alt="Slide2"/>
 
+            <div class="position-absolute top-0 start-0 w-100 h-100 bg-dark opacity-50"></div>
 
-            <!--  
+             
             <div class="carousel-caption d-none d-md-block text-light">
-              <h5>Second slide label</h5>
+              <h5>Posters originales de Rock</h5>
               <p>
-                Some representative placeholder content for the second slide.
+                Decora tus espacios con posters exclusivos de tus 
+                bandas favoritas. Colecciona arte auténtico y revive 
+                los mejores momentos del rock en cada pared. ¡Encuentra
+                diseños únicos para verdaderos fans!
               </p>
-            </div>  -->
+            </div> 
 
           </div>   
 
 
           <!--Tercer slide ---->
-          <div class="carousel-item">
+          <div class="carousel-item position-relative">
             <img
-              src="https://blog.discmakers.com/wp-content/uploads/2023/08/MerchIdeas_Feature.jpg"
+              src="img/imagen3.jpg"
               class="d-block w-100"
               alt="slide3"
             />
 
-            <!---
+            <div class="position-absolute top-0 start-0 w-100 h-100 bg-dark opacity-50"></div>
+            
             <div class="carousel-caption d-none d-md-block">
               <h5>Third slide label</h5>
               <p>
                 Some representative placeholder content for the third slide.
               </p>
-            </div> -->
+            </div>
 
           </div>
 
