@@ -2,18 +2,14 @@ body {
   
 }
 
-img {
+.carousel-inner img {
   max-height: 500px;
 
 }
 
-.btn:focus {
-  outline: none;
-  box-shadow: none;
-}
 
 .logo {
-  max-height: 70px; /* Ajusta este valor según lo que necesites */
+  max-height: 70px; 
   height: auto;
   width: auto;
   margin-top: 0;
@@ -23,8 +19,17 @@ img {
 }
 
 
+
+
+
 @media (max-width: 576px) {
   .carousel-item img {
-    height: 200px;
+    height: 300px;
+  }
+}
+
+@media (max-width: 1000px) {
+  .carousel-item img {
+    height: 400px;
   }
 }
