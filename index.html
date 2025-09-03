@@ -55,7 +55,7 @@
           <form class="d-flex" role="search">
             <input class="form-control me-2" type="search" placeholder="Search" aria-label="Buscar" />
 
-            <button class="btn btn-outline-warning" type="submit">
+            <button class="btn btn-outline-warning btn-danger border-0 text-black" type="submit">
               Buscar
             </button>
           </form>
@@ -240,63 +240,202 @@
         <span class="visually-hidden">Next</span>
       </button>
     </div>
-
-
-
   </header>
 
-
-
-
-
-
-
-
-
-
-
-
   <!--Parte de Dani(Main)-->
+  <main>
+    <div class="container text-center mt-1">
+      <h1 class="fw-bold">RECIEN LLEGADOS</h1>
+      <!-- DIV PADRE CAROUSEL ARRIBA -->
+      <div id="artistasCarousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
 
+          <!-- musicas de arriba 1 -->
+          <div class="carousel-item active text-white">
+            <div class="row g-3">
+              <div class="col-md-4">
+                <img
+                  src="https://www.repdiscosperu.com/cdn/shop/files/NUEVOSSHOPIFYPRODUCTOSCUADRADOS_7_0a9b9ce6-7fa4-49c7-8fce-ce09e5060350.png?v=1754348856&width=800"
+                  class="img-fluid rounded " alt="Melanie Martinez">
+                <h3>Melanie Martinez - After School Vinilo Exclusivo</h3>
+                <p>S/. 189.00</p>
+              </div>
+              <div class="col-md-4">
+                <img src="https://www.repdiscosperu.com/cdn/shop/files/Disenosintitulo-61.png?v=1708104971&width=800"
+                  class="img-fluid rounded " alt="Ariana Grande">
+                <h3>Ariana Grande - Positions Vinilo</h3>
+                <p>S/. 179.00</p>
+              </div>
+              <div class="col-md-4">
+                <img
+                  src="https://www.repdiscosperu.com/cdn/shop/files/NUEVOSSHOPIFYPRODUCTOSCUADRADOS_10.png?v=1740690626&width=800"
+                  class="img-fluid rounded " alt="The Weeknd">
+                <h3>The Weeknd - Dawn FM Vinilo</h3>
+                <p>S/. 199.00</p>
+              </div>
+            </div>
+          </div>
 
+          <!-- musicas de arriba 2 -->
+          <div class="carousel-item text-white">
+            <div class="row g-3">
+              <div class="col-md-4">
+                <img src="https://www.repdiscosperu.com/cdn/shop/files/83.png?v=1722286348&width=800"
+                  class="img-fluid rounded " alt="Dua Lipa">
+                <h3>Dua Lipa - Dua Lipa Vinilo Zoetrope Exclusivo</h3>
+                <p>S/. 159.99</p>
+              </div>
+              <div class="col-md-4">
+                <img
+                  src="https://www.repdiscosperu.com/cdn/shop/files/9_cc8ccd46-0ba6-495c-90f8-667a35f11212.png?v=1751045274&width=800"
+                  class="img-fluid rounded " alt="Billie Eilish">
+                <h3>Billie Eilish - Happier Than Ever Vinilo Limitado </h3>
+                <p>S/. 149.99</p>
+              </div>
+              <div class="col-md-4">
+                <img
+                  src="https://www.repdiscosperu.com/cdn/shop/files/2-black_standard_lp-everything.png?v=1704993364&width=500"
+                  class="img-fluid rounded " alt="Ed Sheeran">
+                <h3>Ed Sheeran - = Vinilo</h3>
+                <p>S/. 169.99</p>
+              </div>
+            </div>
+          </div>
 
-  <!--Parte de Luis(Main)-->
-
-  <main class="container text-center text-light my-5">
-    <h1>Productos que tenemos</h1>
-
-    <!-- Una sola fila que contiene todos los productos -->
-    <section id="galeria" class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4 my-3">
-
-      <!-- Producto 1 -->
-      <div class="col">
-        <div class="card shadow-sm">
-          <img src="img/6Voltios.jpg.jpeg" class="img-fluid rounded" alt="Producto 1">
-          <h3 class="my-3">Polo de 6 Voltios</h3>
-          <p>Precio: 30.00 PEN</p>
-          <button class="btn btn-warning">Comprar</button>
         </div>
+
+        <!-- control para ida  -->
+        <button class="carousel-control-prev" type="button" data-bs-target="#artistasCarousel" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon"></span>
+        </button>
+        <!-- control para vuelta  -->
+        <button class="carousel-control-next" type="button" data-bs-target="#artistasCarousel" data-bs-slide="next">
+          <span class="carousel-control-next-icon"></span>
+        </button>
       </div>
 
-      <!-- Producto 2 -->
-      <div class="col">
-        <div class="card shadow-sm">
-          <img src="img/Rio.jpg.jpeg" class="img-fluid rounded" alt="Producto 2">
-          <h3 class="my-3">Polo de Rio</h3>
-          <p>Precio: 30.00 PEN</p>
-          <button class="btn btn-warning">Comprar</button>
+
+
+
+
+
+
+      <h1 class="fw-bold mt-5">MUSICA DESTACADA</h1>
+
+      <!-- DIV PADRE CAROUSEL ABAJO -->
+      <div id="artistasCarousel2" class="carousel slide mt-4" data-bs-ride="carousel">
+        <div class="carousel-inner">
+
+          <!-- musicas de abajo 1 -->
+          <div class="carousel-item active text-white">
+            <div class="row g-3">
+              <div class="col-md-4">
+                <img
+                  src="https://www.repdiscosperu.com/cdn/shop/files/Disenosintitulo_d1743f35-188f-448e-bca3-7f39ad7d092c.png?v=1721335963&width=800"
+                  class="img-fluid rounded" alt="Shakira">
+                <h3>Shakira - Shakira Vinilo</h3>
+                <p>S/. 200.00</p>
+              </div>
+              <div class="col-md-4">
+                <img
+                  src="https://www.repdiscosperu.com/cdn/shop/files/42_0c1df284-76e8-43d0-aaff-2056dc6eacb0.png?v=1711765787&width=800"
+                  class="img-fluid rounded" alt="Bad Bunny">
+                <h3>Bad Bunny - Nadie Sabe Lo Que Va A Pasar Mañana Vinilo</h3>
+                <p>S/. 250.00</p>
+              </div>
+              <div class="col-md-4">
+                <img
+                  src="https://www.repdiscosperu.com/cdn/shop/files/lover_CD_1024x1024_ac6c5803-7605-40ad-9725-92df08e72e07.png?v=1682615584&width=800"
+                  class="img-fluid rounded" alt="Taylor Swift">
+                <h3>Taylor Swift - Lover CD</h3>
+                <p>S/. 300.00</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- musicas de abajo 2 -->
+          <div class="carousel-item text-white">
+            <div class="row g-3">
+              <div class="col-md-4">
+                <img
+                  src="https://www.repdiscosperu.com/cdn/shop/files/5_486eeef9-8d77-4fdf-a15a-25898f0b550f.png?v=1750785771&width=800"
+                  class="img-fluid rounded" alt="Sabrina Carpenter">
+                <h3>Sabrina Carpenter - Man's Best Friend Vinilo Blanco Exclusivo</h3>
+                <p>S/. 199.00</p>
+              </div>
+              <div class="col-md-4">
+                <img
+                  src="https://www.repdiscosperu.com/cdn/shop/files/NUEVOSSHOPIFYPRODUCTOSCUADRADOS_6.png?v=1739561844&width=800"
+                  class="img-fluid rounded" alt="Selena Gomez">
+                <h3>Selena Gomez & Benny Blanco - I Said I Love You First Vinilo Merlot</h3>
+                <p>S/. 159.99</p>
+              </div>
+              <div class="col-md-4">
+                <img
+                  src="https://www.repdiscosperu.com/cdn/shop/files/NUEVOSSHOPIFYPRODUCTOSCUADRADOS_17.png?v=1746406779&width=800"
+                  class="img-fluid rounded" alt="Halsey">
+                <h3>Halsey - Manic Vinilo Milky Clear</h3>
+                <p>S/. 169.99</p>
+              </div>
+            </div>
+          </div>
+
         </div>
+
+
+        <button class="carousel-control-prev" type="button" data-bs-target="#artistasCarousel2" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#artistasCarousel2" data-bs-slide="next">
+          <span class="carousel-control-next-icon"></span>
+        </button>
       </div>
 
-      <!-- Producto 3 -->
-      <div class="col">
-        <div class="card shadow-sm">
-          <img src="img/Libido.jpg.jpeg" class="img-fluid rounded" alt="Producto 3">
-          <h3 class="my-3">Polo de Libido</h3>
-          <p>Precio: 30.00 PEN</p>
-          <button class="btn btn-warning">Comprar</button>
+    </div>
+
+
+    <!--Parte de Luis(Main)-->
+
+    <div class="container text-center text-light my-5">
+      <h2>Merchandising</h2>
+
+      <!-- Una sola fila que contiene todos los productos -->
+      <section id="galeria" class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4 my-3">
+
+        <!-- Producto 1 -->
+        <div class="col">
+          <div class="card shadow-sm">
+            <img src="img/6Voltios.jpg.jpeg" class="img-fluid rounded" alt="Producto 1">
+            <h3 class="my-3">Polo de 6 Voltios</h3>
+            <p>Precio: 30.00 PEN</p>
+            <button class="btn btn-warning bg-danger border-0">Comprar</button>
+          </div>
         </div>
-      </div>
+
+        <!-- Producto 2 -->
+        <div class="col">
+          <div class="card shadow-sm">
+            <img src="img/Rio.jpg.jpeg" class="img-fluid rounded" alt="Producto 2">
+            <h3 class="my-3">Polo de Rio</h3>
+            <p>Precio: 30.00 PEN</p>
+            <button class="btn btn-warning bg-danger border-0">Comprar</button>
+          </div>
+        </div>
+
+        <!-- Producto 3 -->
+        <div class="col">
+          <div class="card shadow-sm">
+            <img src="img/Libido.jpg.jpeg" class="img-fluid rounded" alt="Producto 3">
+            <h3 class="my-3">Polo de Libido</h3>
+            <p>Precio: 30.00 PEN</p>
+            <button class="btn btn-warning bg-danger border-0">Comprar</button>
+          </div>
+
+          
+        </div>
+    </div>
+
+
 
     </section>
   </main>
@@ -305,13 +444,13 @@
   <!--Parte de Leonard(Footer)-->
 
   <!-- Footer -->
-  <footer class="bg-dark text-light pt-5 pb-3">
+  <footer class="bg-black text-light pt-5 pb-5">
     <div class="container">
       <div class="row">
 
 
         <!-- Columna 1 -->
-        <div class="col-md-4 col-sm-6 mb-3">
+        <div class="col-md-4 col-sm-6 mb-3 text-center">
           <h5 class="pb-4">Sobre Sonorus</h5>
           <ul class="list-unstyled">
             <li class="mb-2"><a href="#" class="text-light text-decoration-none">¿Qué es Sonorus?</a></li>
@@ -325,9 +464,9 @@
         </div>
 
         <!-- Columna 2 -->
-        <div class="col-md-4 col-sm-6 mb-3">
+        <div class="col-md-4 col-sm-6 mb-3 text-center">
           <h5 class="pb-4">Nuestras redes</h5>
-          <ul class="list-unstyled">
+          <ul class="list-unstyled text-center">
             <li><a href="#" class="text-light text-decoration-none"><i class="fa-brands fa-facebook fa-2x py-2"></i>
                 Siguenos en Facebook</a></li>
             <li><a href="#" class="text-light text-decoration-none"><i class="fa-brands fa-instagram fa-2x py-2"></i>
@@ -339,7 +478,7 @@
 
 
         <!-- Columna 3 -->
-        <div class="col-md-4 col-sm-12 mb-3">
+        <div class="col-md-4 col-sm-12 mb-3 text-center">
           <h5>Terminos y condiciones</h5>
           <p>
             Al acceder y utilizar este sitio web, el usuario acepta cumplir con los presentes Términos y Condiciones
