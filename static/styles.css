@@ -1,0 +1,42 @@
+.navbar {
+  font-family: 'Arial', sans-serif;
+  font-size: 18px;
+  background-color:rgb(30, 30, 32) !important;
+}
+
+
+
+.carousel-inner img {
+  max-height: 800px;
+
+}
+
+
+.logo {
+  max-height: 70px; 
+  height: auto;
+  width: auto;
+  margin-top: 0;
+  display: flex;
+  padding: 0;
+
+}
+
+
+.btn.bg-danger:hover {
+  background-color: black !important;
+  color: white !important;
+}
+
+
+@media (max-width: 576px) {
+  .carousel-item img {
+    height: 300px;
+  }
+}
+
+@media (max-width: 1000px) {
+  .carousel-item img {
+    height: 400px;
+  }
+}

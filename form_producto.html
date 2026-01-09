@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Producto</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    </head>
+
+    <body class="bg-dark text-light">
+
+        <div class="container py-5">
+            <h2 class="text-danger mb-4">Gestión de Producto</h2>
+
+            <form th:object="${producto}" th:action="@{/admin/productos}" method="post" class="card bg-dark border-secondary p-4">
+
+                <input type="hidden" th:field="*{id}">
+
+                <div class="mb-3">
+                    <label class="form-label">Nombre del Producto</label>
+                    <input th:field="*{nombre}" class="form-control" placeholder="Ej: Polera Rock" required>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Precio (S/.)</label>
+                    <input th:field="*{precio}" type="number" step="0.01" class="form-control" placeholder="49.90" required>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Imagen (URL)</label>
+                    <input th:field="*{imagen}" type="text" class="form-control" placeholder="URL de la imagen">
+                </div>
+                <button type="submit" class="btn btn-danger w-100">💾 Guardar</button>
+                <a href="/admin/productos" class="btn btn-outline-light w-100 mt-2">⬅ Cancelar</a>
+            </form>
+        </div>
+
+    </body>
+</html>

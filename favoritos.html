@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Mis Favoritos</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-4">
+    <div class="container">
+        <a class="navbar-brand fw-bold fs-4 text-danger ms-5" th:href="@{/}"
+           style="font-family: 'Orbitron', monospace; font-weight: 900; letter-spacing: 2px; text-shadow: 2px 2px 4px rgba(0,0,0,0.5);">
+            SONORUS
+        </a>
+        <div class="collapse navbar-collapse">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link active" th:href="@{/favoritos}">Favoritos</a></li>
+                <li class="nav-item"><a class="nav-link" th:href="@{/}">Inicio</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- Contenido -->
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+
+            <!-- Formulario -->
+            <div class="card shadow-lg border-0 mb-4">
+                <div class="card-header bg-primary text-white">
+                    <h4 class="mb-0">Agregar Favorito</h4>
+                </div>
+                <div class="card-body">
+                    <form th:action="@{/favoritos/agregar}" method="post" class="row g-3">
+                        <div class="col-md-6">
+                            <input type="text" name="nombre" class="form-control" placeholder="Nombre del producto" required>
+                        </div>
+                        <div class="col-md-6">
+                            <input type="text" name="artista" class="form-control" placeholder="Artista" required>
+                        </div>
+                        <div class="col-12 text-end">
+                            <button type="submit" class="btn btn-success">➕ Agregar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Lista de Favoritos -->
+            <div class="card shadow-lg border-0">
+                <div class="card-header bg-dark text-white">
+                    <h4 class="mb-0">Mis Favoritos</h4>
+                </div>
+
+                <ul class="list-group list-group-flush" th:if="${favoritos.size() > 0}">
+                    <li class="list-group-item d-flex justify-content-between align-items-center"
+                        th:each="fav : ${favoritos}">
+                        <div>
+                            <strong th:text="${fav.nombre}"></strong>
+                            <span class="text-muted"> - </span>
+                            <span th:text="${fav.artista}"></span>
+                        </div>
+                        <a th:href="@{/favoritos/eliminar/{id}(id=${fav.id})}"
+                           class="btn btn-sm btn-outline-danger">❌ Eliminar</a>
+
+                    </li>
+                </ul>
+
+                <div class="p-3 text-center text-muted" th:if="${favoritos.size() == 0}">
+                    <em>No tienes favoritos aún</em>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
