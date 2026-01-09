@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="utf-8"/>
+  <title>Compra Exitosa</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet"/>
+</head>
+<body class="bg-light">
+  <div class="container py-5">
+    <h2>Compra realizada correctamente</h2>
+    <p>Su orden fue registrada. ID: <strong th:text="${ordenId}"></strong></p>
+    <a th:href="@{'/checkout/boleta/' + ${ordenId}}" class="btn btn-primary">Descargar boleta (PDF)</a>
+    <a href="/" class="btn btn-outline-secondary">Volver al inicio</a>
+  </div>
+</body>
+</html>

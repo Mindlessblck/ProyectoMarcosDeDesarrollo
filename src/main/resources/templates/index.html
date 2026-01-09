@@ -1,0 +1,592 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Sonorus</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="styles.css">
+
+
+</head>
+
+<body class="bg-light">
+    <header>
+        <nav class="navbar navbar-expand-lg bg-dark order-bottom border-body py-2" data-bs-theme="dark">
+
+            <div class="container-fluid">
+                <a class="navbar-brand fw-bold fs-4 text-danger ms-5" href="#"
+                    style="font-family: 'Orbitron', monospace; font-weight: 900; letter-spacing: 2px; text-shadow: 2px 2px 4px rgba(0,0,0,0.5);">SONORUS</a>
+
+                <!--Hamburguesa-->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!--La barra de navegacion-->
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link mx-4" aria-current="page" href="#">Inicio</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link mx-4" href="#">Accesorios</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link mx-4" href="#">Coleccion</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link mx-4" href="#">Artistas</a>
+                        </li>
+                    </ul>
+
+
+
+                    <!--Iconos-->
+                    <div class="px-2 d-flex align-items-center">
+                        <!-- Carrito -->
+                        <a th:href="@{/carrito}" class="btn me-2" title="Mi Carrito">
+                            <i class="fa-solid fa-cart-shopping text-light"></i>
+                        </a>
+                        
+                        <!-- Favoritos -->
+                        <a th:href="@{/favoritos}" class="btn me-2" title="Mis Favoritos">
+                            <i class="fa-solid fa-heart text-light"></i>
+                        </a>
+                        
+                        <!-- Si NO hay usuario logueado - Mostrar botones directos -->
+                        <div th:if="${session.usuario == null}" class="d-flex">
+                            <a th:href="@{/login}" class="btn btn-outline-light btn-sm me-2">
+                                <i class="fa-solid fa-sign-in-alt me-1"></i>Iniciar Sesión
+                            </a>
+                            <a th:href="@{/registro}" class="btn btn-danger btn-sm">
+                                <i class="fa-solid fa-user-plus me-1"></i>Registrarse
+                            </a>
+                        </div>
+                        
+                        <!-- Si hay usuario logueado - Mostrar menú simple -->
+                        <div th:if="${session.usuario != null}" class="d-flex align-items-center">
+                            <!-- Información del usuario -->
+                            <span class="text-light me-3">
+                                <i class="fa-solid fa-user me-1"></i>
+                                <span th:text="${session.usuario.nombre}">Usuario</span>
+                            </span>
+                            
+                            <!-- Botones de acción directos -->
+                                <a th:href="@{/logout}" class="btn btn-danger btn-sm" title="Cerrar Sesión" onclick="return confirm('¿Estás seguro de que quieres cerrar sesión?');">
+                                    <i class="fa-solid fa-sign-out-alt"></i>
+                                </a>
+                            
+                        </div>
+                    </div>
+                    
+                    
+                </div>
+                
+            </div>
+
+        </nav>
+
+
+
+        
+
+
+
+
+        
+
+
+
+
+
+        <!--Carrusel-->
+        <div id="carouselExampleDark" class="carousel slide carousel-fade" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active"
+                    aria-current="true" aria-label="Slide 1"></button>
+
+                <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1"
+                    aria-label="Slide 2"></button>
+
+                <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2"
+                    aria-label="Slide 3"></button>
+            </div>
+
+
+
+            <!--Imagenes del carrusel-->
+            <div class="carousel-inner">
+
+                <!--Primer slide -->
+                <div class="carousel-item active" data-bs-interval="4000">
+                    <img src="https://lamerch.pe/cdn/shop/files/TSTSWDESK1.jpg?v=1756226765&width=2000"
+                        class="d-block w-100" alt="slide 1" />
+
+                    <div class="carousel-caption d-none d-md-block text-light">
+                        <h5>Accesorios Exclusivos de Rock</h5>
+                        <p>
+                            Descubre nuestra colección de Accesorios inspirados
+                            en las bandas más legendarias. ¡Perfectas para fans auténticos!
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <!--SEgundo slide -->
+                <div class="carousel-item position-relative" data-bs-interval="3000">
+                    <img src="https://lamerch.pe/cdn/shop/files/SCMBFES_1d28b79e-8aca-4b10-acef-f9306f2c08b3.jpg?v=1750695099&width=1400"
+                        class="d-block w-100" alt="Slide2" />
+
+                    <div class="position-absolute top-0 start-0 w-100 h-100 bg-dark opacity-50"></div>
+                    <div class="carousel-caption d-none d-md-block text-light">
+                        <h5>Posters originales de Rock</h5>
+                        <p>
+                            Decora tus espacios con posters exclusivos de tus
+                            bandas favoritas. Colecciona arte auténtico y revive
+                            los mejores momentos del rock en cada pared. ¡Encuentra
+                            diseños únicos para verdaderos fans!
+                        </p>
+                    </div>
+                </div>
+
+
+                <!--Tercer slide ---->
+                <div class="carousel-item position-relative " data-bs-interval="3000">
+                    <img src="https://lamerch.pe/cdn/shop/files/ConanGrayD.jpg?v=1749493735&width=2000"
+                        class="d-block w-100" alt="slide3" />
+
+                    <div class="position-absolute top-0 start-0 w-100 h-100 bg-dark opacity-50"></div>
+
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>Camisetas Exclusivas de Rock</h5>
+                        <p>
+                            Descubre nuestra colección de camisetas
+                            inspiradas en las bandas más legendarias. ¡Perfectas para fans auténticos!
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark"
+                data-bs-slide="prev">
+
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+
+
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark"
+                data-bs-slide="next">
+
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+
+
+
+
+    </header>
+    <br>
+    <br>
+    <br>
+    
+    
+    <main>
+        <div class="container text-center mt-1">
+            <h1 class="fw-bold text-black py-5">RECIEN LLEGADOS</h1>
+            <!-- DIV PADRE CAROUSEL ARRIBA -->
+            <div id="artistasCarousel" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <!-- musicas de arriba 1 -->
+                    <div class="carousel-item active text-black">
+
+
+                        <div class="row">
+                            <div class="col-md-4" th:each="producto : ${productos}">
+                                
+                                <!--CARDS -->
+                                <div class="card shadow-sm mb-4">
+                                    <img th:src="${producto.imagen}" class="img-fluid rounded"
+                                        th:alt="${producto.nombre}">
+                                    <h3 th:text="${producto.nombre}" class="my-3"></h3>
+                                    <p>S/. <span th:text="${producto.precio}"></span></p>
+
+                                    <form th:action="@{/carrito/agregar/{id}(id=${producto.id})}" method="post">
+                                        <button type="submit" class="btn btn-danger border-0">Comprar</button>
+                                    </form>
+                                    
+                                <!--    Genera un formulario para eliminar el producto del carrito.
+
+th:action="@{/carrito/eliminar/{id}(id=${item.producto.id})}" → construye dinámicamente la URL con el id del producto.
+
+Ejemplo: si item.producto.id = 3, la acción será /carrito/eliminar/3.
+
+El botón envía una petición POST para eliminar ese producto. -->
+                                
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                
+                <!-- control para ida  -->
+                <button class="carousel-control-prev" type="button" data-bs-target="#artistasCarousel"
+                    data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon"></span>
+                </button>
+                <!-- control para vuelta  -->
+                <button class="carousel-control-next" type="button" data-bs-target="#artistasCarousel"
+                    data-bs-slide="next">
+                    <span class="carousel-control-next-icon"></span>
+                </button>
+            </div>
+
+
+
+
+
+            <br>
+            <br>
+            <br>
+            <br>
+
+            
+            <div class="container text-center mt-1">
+                <h1 class="fw-bold text-black py-5">MÚSICA DESTACADA</h1>
+
+                <div id="artistasCarousel2" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-inner">
+
+                        <!-- SLIDE 1 -->
+                        <div class="carousel-item active text-black">
+                            <div class="row g-3">
+                                <!-- Shakira -->
+                                <div class="col-md-4">
+                                    <img src="https://www.repdiscosperu.com/cdn/shop/files/Disenosintitulo_d1743f35-188f-448e-bca3-7f39ad7d092c.png?v=1721335963&width=800"
+                                         class="img-fluid rounded" alt="Shakira">
+                                    <h3>Shakira - Shakira Vinilo</h3>
+                                    <p>S/. 200.00</p>
+                                    <div class="d-flex flex-column gap-2" method="post">
+                                        <button class="btn btn-danger">Comprar</button>
+                                        <form th:action="@{/favoritos/agregar}" method="post">
+                                            <input type="hidden" name="nombre" value="Shakira Vinilo">
+                                            <input type="hidden" name="artista" value="Shakira">
+                                            <button type="submit" class="btn btn-outline-primary">Agregar a Favoritos</button>
+                                        </form>
+                                    </div>
+                                </div>
+
+                                <!-- Bad Bunny -->
+                                <div class="col-md-4">
+                                    <img src="https://www.repdiscosperu.com/cdn/shop/files/42_0c1df284-76e8-43d0-aaff-2056dc6eacb0.png?v=1711765787&width=800"
+                                         class="img-fluid rounded" alt="Bad Bunny">
+                                    <h3>Bad Bunny - NSLQVPM</h3>
+                                    <p>S/. 250.00</p>
+                                    <div class="d-flex flex-column gap-2">
+                                        <button class="btn btn-danger">Comprar</button>
+                                        <form th:action="@{/favoritos/agregar}" method="post">
+                                            <input type="hidden" name="nombre" value="NSLQVPM">
+                                            <input type="hidden" name="artista" value="Bad Bunny">
+                                            <button type="submit" class="btn btn-outline-primary">Agregar a Favoritos</button>
+                                        </form>
+                                    </div>
+                                </div>
+
+                                <!-- Taylor Swift -->
+                                <div class="col-md-4">
+                                    <img src="https://www.repdiscosperu.com/cdn/shop/files/lover_CD_1024x1024_ac6c5803-7605-40ad-9725-92df08e72e07.png?v=1682615584&width=800"
+                                         class="img-fluid rounded" alt="Taylor Swift">
+                                    <h3>Taylor Swift - Lover CD</h3>
+                                    <p>S/. 300.00</p>
+                                    <div class="d-flex flex-column gap-2">
+                                        <button class="btn btn-danger">Comprar</button>
+                                        <form th:action="@{/favoritos/agregar}" method="post">
+                                            <input type="hidden" name="nombre" value="Lover CD">
+                                            <input type="hidden" name="artista" value="Taylor Swift">
+                                            <button type="submit" class="btn btn-outline-primary">Agregar a Favoritos</button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- SLIDE 2 -->
+                        <div class="carousel-item text-black">
+                            <div class="row g-3">
+                                <!-- Sabrina Carpenter -->
+                                <div class="col-md-4">
+                                    <img src="https://www.repdiscosperu.com/cdn/shop/files/5_486eeef9-8d77-4fdf-a15a-25898f0b550f.png?v=1750785771&width=800"
+                                         class="img-fluid rounded" alt="Sabrina Carpenter">
+                                    <h3>Sabrina Carpenter - Man's Best Friend</h3>
+                                    <p>S/. 199.00</p>
+                                    <div class="d-flex flex-column gap-2">
+                                        <button class="btn btn-danger">Comprar</button>
+                                        <form th:action="@{/favoritos/agregar}" method="post">
+                                            <input type="hidden" name="nombre" value="Man's Best Friend">
+                                            <input type="hidden" name="artista" value="Sabrina Carpenter">
+                                            <button type="submit" class="btn btn-outline-primary">Agregar a Favoritos</button>
+                                        </form>
+                                    </div>
+                                </div>
+
+                                <!-- Selena Gomez -->
+                                <div class="col-md-4">
+                                    <img src="https://www.repdiscosperu.com/cdn/shop/files/NUEVOSSHOPIFYPRODUCTOSCUADRADOS_6.png?v=1739561844&width=800"
+                                         class="img-fluid rounded" alt="Selena Gomez">
+                                    <h3>Selena Gomez & Benny Blanco - I Said I Love You</h3>
+                                    <p>S/. 159.99</p>
+                                    <div class="d-flex flex-column gap-2">
+                                        <button class="btn btn-danger">Comprar</button>
+
+                                        <form th:action="@{/favoritos/agregar}" method="post">
+                                            <input type="hidden" name="nombre" value="I Said I Love You">
+                                            <input type="hidden" name="artista" value="Selena Gomez & Benny Blanco">
+                                            <button type="submit" class="btn btn-outline-primary">Agregar a Favoritos</button>
+                                        </form>
+                                    </div>
+                                </div>
+
+                                <!-- Halsey -->
+                                <div class="col-md-4">
+                                    <img src="https://www.repdiscosperu.com/cdn/shop/files/NUEVOSSHOPIFYPRODUCTOSCUADRADOS_17.png?v=1746406779&width=800" class="d-block w-100 rounded-4" alt="...">
+                                    <h3 class="mt-2">Halsey - Manic (Vinilo Milky Clear)</h3>
+                                    <p>S/. 179.00</p>
+                                    <div class="d-flex flex-column gap-2 mt-2">
+                                        <button class="btn btn-danger">Comprar</button>
+                                        <form th:action="@{/favoritos/agregar}" method="post">
+                                            <input type="hidden" name="nombre" value="Halsey - Manic Vinilo Milky Clear">
+                                            <input type="hidden" name="artista" value="Halsey">
+                                            <button type="submit" class="btn btn-outline-primary">Agregar a Favoritos</button>
+                                        </form>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+                    
+                    <button class="carousel-control-prev text-black" type="button" data-bs-target="#artistasCarousel2"
+                        data-bs-slide="prev">
+
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+
+
+                    <button class="carousel-control-next" type="button" data-bs-target="#artistasCarousel2"
+                        data-bs-slide="next">
+
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                    
+                    
+                    
+                    
+                </div>   
+            </div>
+        </div>
+
+
+
+            
+            
+            
+            
+            
+            
+            
+
+
+
+        <!-- SECCION DE MERCHANDISING -->
+
+
+
+
+
+        <div class="container text-center my-5">
+            <h1 class="text-black fw-bold" >MERCHANDISING</h1>
+
+            <!-- Una sola fila que contiene todos los productos -->
+            <section id="galeria" class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4 my-3">
+                <!-- Producto 1 -->
+                <div class="col">
+                    <div class="card shadow-sm">
+                        <img src="img/oasis.jpg" class="img-fluid rounded" alt="Producto 1">
+                        <h3 class="my-3">Polo de Oasis</h3>
+                        <p>Precio: 45.00 PEN</p>
+                        <button class="btn btn-warning bg-danger border-0">Comprar</button>
+                    </div>
+                </div>
+
+                <!-- Producto 2 -->
+                <div class="col">
+                    <div class="card shadow-sm">
+                        <img src="img/radiohead.jpg" class="img-fluid rounded" alt="Producto 2">
+                        <h3 class="my-3">Polo de Rio</h3>
+                        <p>Precio: 45.00 PEN</p>
+                        <button class="btn btn-warning bg-danger border-0">Comprar</button>
+                    </div>
+                </div>
+
+                <!-- Producto 3 -->
+                <div class="col">
+                    <div class="card shadow-sm">
+                        <img src="img/gsr.jpg" class="img-fluid rounded" alt="Producto 3">
+                        <h3 class="my-3">Polo de gunNroses</h3>
+                        <p>Precio: 45.00 PEN</p>
+                        <button class="btn btn-warning bg-danger border-0">Comprar</button>
+                    </div>
+                </div>
+
+                <!-- Producto 4 -->
+
+                <div class="col">
+                    <div class="card shadow-sm">
+                        <img src="img/evanescence.jpg" class="img-fluid rounded" alt="Producto 1">
+                        <h3 class="my-3">Polo de evanescence</h3>
+                        <p>Precio: 45.00 PEN</p>
+                        <button class="btn btn-warning bg-danger border-0">Comprar</button>
+                    </div>
+                </div>
+
+                <!-- Producto 5 -->
+
+                <div class="col">
+                    <div class="card shadow-sm">
+                        <img src="img/mcr.jpg" class="img-fluid rounded" alt="Producto 1">
+                        <h3 class="my-3">Polo de My Chemical Romance</h3>
+                        <p>Precio: 45.00 PEN</p>
+                        <button class="btn btn-warning bg-danger border-0">Comprar</button>
+                    </div>
+                </div>
+
+                <!-- Producto 6 -->
+
+                <div class="col">
+                    <div class="card shadow-sm">
+                        <img src="img/fob.jpg" class="img-fluid rounded" alt="Producto 1">
+                        <h3 class="my-3">Polo de Fall Out Boy</h3>
+                        <p>Precio: 45.00 PEN</p>
+                        <button class="btn btn-warning bg-danger border-0">Comprar</button>
+                    </div>
+                </div>
+
+                <!-- Producto 7 -->
+
+                
+                
+               
+            </section>
+
+
+        </div>
+
+
+
+
+
+
+
+
+
+     </main>
+
+
+
+    <!-- Footer -->
+    <footer class="bg-black text-light pt-5 pb-5">
+        <div class="container">
+            <div class="row">
+
+
+                <!-- Columna 1 -->
+                <div class="col-md-4 col-sm-6 mb-3 text-center">
+                    <h5 class="pb-4">Sobre Sonorus</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="#" class="text-light text-decoration-none">¿Qué es Sonorus?</a></li>
+                        <li class="mb-2"><a href="#" class="text-light text-decoration-none">Trabaja con nosotros</a>
+                        </li>
+                        <li class="mb-2"><a href="#" class="text-light text-decoration-none">Nuestros artistas</a></li>
+                        <li class="mb-2"><a href="#" class="text-light text-decoration-none">¿Qué buscamos?</a></li>
+                        <li><a href="#" class="text-light text-decoration-none">Misión</a></li>
+
+
+                    </ul>
+                </div>
+
+                <!-- Columna 2 -->
+                <div class="col-md-4 col-sm-6 mb-3 text-center">
+                    <h5 class="pb-4">Nuestras redes</h5>
+                    <ul class="list-unstyled text-center">
+                        <li><a href="#" class="text-light text-decoration-none"><i
+                                    class="fa-brands fa-facebook fa-2x py-2"></i>
+                                Siguenos en Facebook</a></li>
+                        <li><a href="#" class="text-light text-decoration-none"><i
+                                    class="fa-brands fa-instagram fa-2x py-2"></i>
+                                Siguenos en Instagram</a></li>
+                        <li><a href="#" class="text-light text-decoration-none"><i
+                                    class="fa-brands fa-x-twitter fa-2x py-2"></i>
+                                Siguenos en Twitter</a></li>
+                    </ul>
+                </div>
+
+
+                <!-- Columna 3 -->
+                <div class="col-md-4 col-sm-12 mb-3 text-center">
+                    <h5>Terminos y condiciones</h5>
+                    <p>
+                        Al acceder y utilizar este sitio web, el usuario acepta cumplir con los presentes Términos y
+                        Condiciones
+                        de uso.
+                    </p>
+                    <p>
+
+                        Toda la información contenida en este sitio es únicamente con fines informativos y puede estar
+                        sujeta a
+                        cambios sin previo aviso.
+                        Nos reservamos el derecho de modificar, actualizar o eliminar el contenido en cualquier momento.
+
+                    </p>
+                    <p>
+
+                        El uso continuado de este sitio web implica la aceptación de estas condiciones.
+                        En caso de no estar de acuerdo, se recomienda no utilizar el sitio.
+                    </p>
+
+                </div>
+
+            </div>
+            
+            <hr class="border-secondary">
+            <p class="text-center mb-0">© 2025 Mi Sitio Web. Todos los derechos reservados.</p>
+            
+        </div>
+    </footer>
+
+    
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
+        crossorigin="anonymous"></script>
+
+</body>
+</html>

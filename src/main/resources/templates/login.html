@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Iniciar Sesión - Sonorus</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-dark text-light">
+    <div class="container d-flex justify-content-center align-items-center min-vh-100">
+        <div class="row w-100">
+            <div class="col-md-6 col-lg-4 mx-auto">
+                <div class="card bg-dark border-secondary">
+                    <!-- Encabezado -->
+                    <div class="card-header bg-dark border-bottom border-secondary">
+                        <h5 class="card-title text-danger text-center mb-0" style="font-family: 'Orbitron', monospace; font-weight: 700;">
+                            <i class="fa-solid fa-user me-2"></i>INICIAR SESIÓN
+                        </h5>
+                    </div>
+
+                    <!-- Cuerpo con formulario -->
+                    <div class="card-body">
+                        <!-- Mensaje de error si login falla -->
+                        <div th:if="${error}" class="alert alert-danger" th:text="${error}"></div>
+
+                        <!-- Formulario que envía al controlador -->
+                        <form th:action="@{/login}" th:object="${usuario}" method="POST">
+                            <div class="mb-3">
+                                <label for="email" class="form-label text-light">Correo Electrónico</label>
+                                <input placeholder="email@ejemplo.com" type="email" th:field="*{email}" class="form-control" id="email" required>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="password" class="form-label text-light">Contraseña</label>
+                                <input placeholder="Tu contraseña" type="password" th:field="*{password}" class="form-control" id="password" required>
+                            </div>
+
+                            <div class="mb-3">
+                                <a href="#" class="text-danger text-decoration-none">¿Olvidaste tu contraseña?</a>
+                            </div>
+
+                            <div class="d-grid gap-2">
+                                <button type="submit" class="btn btn-danger">
+                                    <i class="fa-solid fa-sign-in-alt me-2"></i>Acceder
+                                </button>   
+                            </div>
+                        </form>
+                    </div>
+
+                    <!-- Pie del formulario -->
+                    <div class="card-footer bg-dark border-top border-secondary text-center">
+                        <small class="text-muted">¿No tienes una cuenta?</small>
+                        <a href="/registro" class="text-danger text-decoration-none ms-2">Crear cuenta</a>
+                    </div>
+                </div>
+
+                <!-- Marca Sonorus -->
+                <div class="text-center mt-4">
+                    <a href="/" class="text-decoration-none">
+                        <h3 class="text-danger" style="font-family: 'Orbitron', monospace; font-weight: 900; letter-spacing: 2px; text-shadow: 2px 2px 4px rgba(0,0,0,0.5);">
+                            SONORUS
+                        </h3>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
+        crossorigin="anonymous"></script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="utf-8"/>
+  <title>Checkout - Sonorus</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet"/>
+</head>
+<body class="bg-light">
+  <div class="container py-5">
+    <h2>Finalizar compra</h2>
+    <form th:action="@{/checkout/confirmar}" th:object="${ordenForm}" method="post" class="row g-3">
+      <div class="col-md-6">
+        <label class="form-label">Nombre</label>
+        <input class="form-control" th:field="*{nombre}" required />
+      </div>
+      <div class="col-12">
+        <label class="form-label">Dirección</label>
+        <input class="form-control" th:field="*{direccion}" required />
+      </div>
+      <div class="col-md-6">
+        <label class="form-label">Ciudad / Distrito</label>
+        <input class="form-control" th:field="*{ciudad}" required />
+      </div>
+
+      <h4 class="mt-3">Datos de tarjeta</h4>
+      <div class="col-md-6">
+        <label class="form-label">Número de tarjeta</label>
+        <input class="form-control" th:field="*{tarjeta}" placeholder="4111111111111111" required />
+      </div>
+      <div class="col-md-3">
+        <label class="form-label">Expiración</label>
+        <input class="form-control" th:field="*{expiracion}" placeholder="MM/AA" required />
+      </div>
+      <div class="col-md-3">
+        <label class="form-label">CVV</label>
+        <input class="form-control" th:field="*{cvv}" required />
+      </div>
+
+      <div class="col-12 text-end">
+        <a href="/" class="btn btn-secondary">Cancelar</a>
+        <button type="submit" class="btn btn-success">Confirmar y pagar</button>
+      </div>
+    </form>
+  </div>
+</body>
+</html>
