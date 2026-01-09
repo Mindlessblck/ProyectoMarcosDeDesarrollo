@@ -1,33 +1,39 @@
-HELP.md
+# Excluir todo el backend de Java
+src/main/java/
+src/test/
 target/
-.mvn/wrapper/maven-wrapper.jar
-!**/src/main/**/target/
-!**/src/test/**/target/
+pom.xml
+mvnw
+mvnw.cmd
+.mvn/
+*.eml
+HELP.md
 
-### STS ###
-.apt_generated
+# Excluir configuración con credenciales de base de datos
+src/main/resources/application.properties
+
+# IDE
+.idea/
+.vscode/
+*.iml
+*.iws
+*.ipr
 .classpath
 .factorypath
 .project
-.settings
+.settings/
 .springBeans
 .sts4-cache
+.apt_generated
 
-### IntelliJ IDEA ###
-.idea
-*.iws
-*.iml
-*.ipr
-
-### NetBeans ###
-/nbproject/private/
+# NetBeans
+/nbproject/
 /nbbuild/
 /dist/
 /nbdist/
 /.nb-gradle/
 build/
-!**/src/main/**/build/
-!**/src/test/**/build/
 
-### VS Code ###
-.vscode/
+# Solo mantener:
+# - src/main/resources/templates/ (HTML)
+# - src/main/resources/static/ (CSS e imágenes)
