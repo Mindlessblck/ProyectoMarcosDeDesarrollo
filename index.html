@@ -74,20 +74,6 @@
                             </a>
                         </div>
                         
-                        <!-- Si hay usuario logueado - Mostrar menú simple -->
-                        <div th:if="${session.usuario != null}" class="d-flex align-items-center">
-                            <!-- Información del usuario -->
-                            <span class="text-light me-3">
-                                <i class="fa-solid fa-user me-1"></i>
-                                <span th:text="${session.usuario.nombre}">Usuario</span>
-                            </span>
-                            
-                            <!-- Botones de acción directos -->
-                                <a th:href="@{/logout}" class="btn btn-danger btn-sm" title="Cerrar Sesión" onclick="return confirm('¿Estás seguro de que quieres cerrar sesión?');">
-                                    <i class="fa-solid fa-sign-out-alt"></i>
-                                </a>
-                            
-                        </div>
                     </div>
                     
                     
