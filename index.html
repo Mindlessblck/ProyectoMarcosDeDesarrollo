@@ -212,32 +212,77 @@
             <!-- DIV PADRE CAROUSEL ARRIBA -->
             <div id="artistasCarousel" class="carousel slide" data-bs-ride="carousel">
                 <div class="carousel-inner">
-                    <!-- musicas de arriba 1 -->
+                    <!-- Slide 1 - Primeros 3 productos -->
                     <div class="carousel-item active text-black">
-
-
-                        <div class="row">
-                            <div class="col-md-4" th:each="producto : ${productos}">
-                                
-                                <!--CARDS -->
+                        <div class="row g-3">
+                            <!-- The Weeknd -->
+                            <div class="col-md-4">
                                 <div class="card shadow-sm mb-4">
-                                    <img th:src="${producto.imagen}" class="img-fluid rounded"
-                                        th:alt="${producto.nombre}">
-                                    <h3 th:text="${producto.nombre}" class="my-3"></h3>
-                                    <p>S/. <span th:text="${producto.precio}"></span></p>
+                                    <img src="https://www.repdiscosperu.com/cdn/shop/files/NUEVOSSHOPIFYPRODUCTOSCUADRADOS_28.png?v=1750169931&width=800" 
+                                         class="img-fluid rounded" alt="The Weeknd">
+                                    <h3 class="my-3">The Weeknd - Hurry Up Tomorrow</h3>
+                                    <p>S/. 189.00</p>
+                                    <button class="btn btn-danger border-0">Comprar</button>
+                                </div>
+                            </div>
 
-                                    <form th:action="@{/carrito/agregar/{id}(id=${producto.id})}" method="post">
-                                        <button type="submit" class="btn btn-danger border-0">Comprar</button>
-                                    </form>
-                                    
-                                <!--    Genera un formulario para eliminar el producto del carrito.
+                            <!-- Ariana Grande -->
+                            <div class="col-md-4">
+                                <div class="card shadow-sm mb-4">
+                                    <img src="https://www.repdiscosperu.com/cdn/shop/files/Disenosintitulo_20.png?v=1724359851&width=800" 
+                                         class="img-fluid rounded" alt="Ariana Grande">
+                                    <h3 class="my-3">Ariana Grande - Eternal Sunshine</h3>
+                                    <p>S/. 175.00</p>
+                                    <button class="btn btn-danger border-0">Comprar</button>
+                                </div>
+                            </div>
 
-th:action="@{/carrito/eliminar/{id}(id=${item.producto.id})}" → construye dinámicamente la URL con el id del producto.
+                            <!-- Billie Eilish -->
+                            <div class="col-md-4">
+                                <div class="card shadow-sm mb-4">
+                                    <img src="https://www.repdiscosperu.com/cdn/shop/files/Disenosintitulo_21.png?v=1725054421&width=800" 
+                                         class="img-fluid rounded" alt="Billie Eilish">
+                                    <h3 class="my-3">Billie Eilish - Hit Me Hard and Soft</h3>
+                                    <p>S/. 199.00</p>
+                                    <button class="btn btn-danger border-0">Comprar</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
-Ejemplo: si item.producto.id = 3, la acción será /carrito/eliminar/3.
+                    <!-- Slide 2 - Siguientes 3 productos -->
+                    <div class="carousel-item text-black">
+                        <div class="row g-3">
+                            <!-- Olivia Rodrigo -->
+                            <div class="col-md-4">
+                                <div class="card shadow-sm mb-4">
+                                    <img src="https://www.repdiscosperu.com/cdn/shop/files/Disenosintitulo_24.png?v=1721336027&width=800" 
+                                         class="img-fluid rounded" alt="Olivia Rodrigo">
+                                    <h3 class="my-3">Olivia Rodrigo - GUTS</h3>
+                                    <p>S/. 185.00</p>
+                                    <button class="btn btn-danger border-0">Comprar</button>
+                                </div>
+                            </div>
 
-El botón envía una petición POST para eliminar ese producto. -->
-                                
+                            <!-- Dua Lipa -->
+                            <div class="col-md-4">
+                                <div class="card shadow-sm mb-4">
+                                    <img src="https://www.repdiscosperu.com/cdn/shop/files/Disenosintitulo_19.png?v=1725054483&width=800" 
+                                         class="img-fluid rounded" alt="Dua Lipa">
+                                    <h3 class="my-3">Dua Lipa - Radical Optimism</h3>
+                                    <p>S/. 195.00</p>
+                                    <button class="btn btn-danger border-0">Comprar</button>
+                                </div>
+                            </div>
+
+                            <!-- Chappell Roan -->
+                            <div class="col-md-4">
+                                <div class="card shadow-sm mb-4">
+                                    <img src="https://www.repdiscosperu.com/cdn/shop/files/Disenosintitulo_9_5c950e09-45c2-4c8c-b6e1-fa13bb54e41f.png?v=1728000815&width=800" 
+                                         class="img-fluid rounded" alt="Chappell Roan">
+                                    <h3 class="my-3">Chappell Roan - The Rise and Fall</h3>
+                                    <p>S/. 179.00</p>
+                                    <button class="btn btn-danger border-0">Comprar</button>
                                 </div>
                             </div>
                         </div>
